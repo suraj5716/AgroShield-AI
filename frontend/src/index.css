@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-ink bg-canvas;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-sans;
+  }
+
+  input, select, textarea, button {
+    @apply font-sans;
+  }
+
+  ::selection {
+    @apply bg-primary/20;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-canvas border border-hairline rounded-2xl shadow-[0_12px_30px_rgba(17,41,26,0.05)] transition-all duration-200;
+  }
+
+  .card-crop {
+    @apply card;
+  }
+
+  .card-soil {
+    @apply card;
+  }
+
+  .card-elevated {
+    @apply bg-surface-1 rounded-2xl;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-sans text-btn-label border rounded-xl transition-all duration-150 min-h-[48px] px-4 py-3;
+  }
+
+  .btn-primary {
+    @apply btn bg-[#1d6b45] text-primary-on border-[#1d6b45] hover:bg-[#145236] active:bg-[#0f3d28] disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_8px_18px_rgba(29,107,69,0.2)];
+  }
+
+  .btn-secondary {
+    @apply btn bg-ink text-inverse-ink border-ink hover:bg-ink/90 active:bg-ink/80 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-tertiary {
+    @apply btn bg-canvas text-[#1d6b45] border-[#1d6b45]/30 hover:bg-[#1d6b45]/5 active:bg-[#1d6b45]/10 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-[#1d6b45] border-transparent hover:bg-[#1d6b45]/5 active:bg-[#1d6b45]/10;
+  }
+
+  .btn-danger {
+    @apply btn bg-semantic-error text-primary-on border-semantic-error hover:bg-semantic-error/90 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full px-2.5 py-1 text-caption font-sans tracking-wider border;
+  }
+
+  .chip-success {
+    @apply chip text-semantic-success border-semantic-success/30 bg-semantic-success/5;
+  }
+
+  .chip-warning {
+    @apply chip text-semantic-warning border-semantic-warning/30 bg-semantic-warning/5;
+  }
+
+  .chip-error {
+    @apply chip text-semantic-error border-semantic-error/30 bg-semantic-error/5;
+  }
+
+  .chip-neutral {
+    @apply chip text-ink-muted border-hairline bg-surface-1;
+  }
+
+  .input-field {
+    @apply w-full bg-surface-1 text-ink text-body border border-hairline rounded-xl px-4 py-[11px] focus:border-[#1d6b45] focus:ring-2 focus:ring-[#1d6b45]/15 focus:outline-none transition-all min-h-[48px];
+  }
+
+  .input-field-error {
+    @apply input-field border-b-semantic-error;
+  }
+
+  .progress-bar {
+    @apply h-3 bg-surface-2 rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full transition-all duration-500;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-150 cursor-pointer text-body-sm;
+  }
+
+  .nav-item-active {
+    @apply nav-item bg-[#1d6b45]/10 text-[#1d6b45] font-semibold;
+  }
+
+  .nav-item-inactive {
+    @apply nav-item text-ink-muted hover:bg-surface-1;
+  }
+
+  .tab-item {
+    @apply px-5 py-4 text-body-sm text-ink-muted border-b border-hairline cursor-pointer transition-colors hover:text-ink;
+  }
+
+  .tab-item-selected {
+    @apply tab-item text-ink font-semibold border-b-2 border-[#1d6b45];
+  }
+}
+
+.leaflet-container {
+  height: 400px;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#b5c7b9] rounded-full border-[3px] border-canvas;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-[#7d9f84];
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #b5c7b9 transparent;
+}
+
+.app-scroll {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+}
