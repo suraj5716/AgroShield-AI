@@ -21,4 +21,3 @@ dist/
 .cache/
 .ppt-build/
 build/
-.env
